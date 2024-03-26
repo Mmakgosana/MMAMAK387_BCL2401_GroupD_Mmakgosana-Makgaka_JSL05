@@ -11,7 +11,8 @@ const songs = [
     { title: "Come and Get Your Love", artist: "Redbone", genre: "Rock" },
     { title: "I'm Not in Love", artist: "10cc", genre: "Pop" },
     { title: "Fooled Around and Fell in Love", artist: "Elvin Bishop", genre: "Rock" },
-    { title: "Love on the brain", artist: "Rihanna", genre: "Pop"},
+    { title: "Love on the brain", artist: "Rihanna", genre: "Pop" },
+    { title: "Tshwala Bami", artist: "Chillies RSA", genre: "Amapiano" },
     
     // Feel free to add even more songs
 ];

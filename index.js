@@ -13,6 +13,9 @@ const songs = [
     { title: "Fooled Around and Fell in Love", artist: "Elvin Bishop", genre: "Rock" },
     { title: "Love on the brain", artist: "Rihanna", genre: "Pop" },
     { title: "Tshwala Bami", artist: "Chillies RSA", genre: "Amapiano" },
+    { title: "Ghida", artist: "Dj Karri & Dj Gizo", genre:"Amapiano" },
+    {}
+    {}
     
     // Feel free to add even more songs
 ];

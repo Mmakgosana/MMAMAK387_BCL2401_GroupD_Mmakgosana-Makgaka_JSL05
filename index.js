@@ -14,8 +14,8 @@ const songs = [
     { title: "Love on the brain", artist: "Rihanna", genre: "Pop" },
     { title: "Tshwala Bami", artist: "Chillies RSA", genre: "Amapiano" },
     { title: "Ghida", artist: "Dj Karri & Dj Gizo", genre:"Amapiano" },
-    { title: "First Time", artist: "Teeks", genre:"R&B/Soul", },
-    { title: "", artist:"", genre:"",},
+    { title: "My Sharona", artist: "The Knack", genre:"Rock", },
+    { title: "The Final Countdown", artist:"Europe", genre:"Rock",},
     
     // Feel free to add even more songs
 ];
@@ -25,8 +25,8 @@ const songs = [
 const guardians = {
     "Star-Lord": "Rock",
     "Gamora": "Pop",
-    "Drax" : "Amapiano",
-    "Rocket" : "R&B",
+    "Drax" : "Rock",
+    "Rocket" : "Rock",
     "Groot" : "Pop",
      // Add preferences for Drax, Rocket, and Groot
 };
@@ -41,8 +41,38 @@ const guardians = {
         });
         return playlists;
       }
-
-// Call generatePlaylist and display the playlists for each Guardian
-generatePlaylist(guardians, songs);
-
-
+//Function to display playlists on the webpage      
+    function displayPlaylists(playlists) {
+        const playlistsContainer = document.getElementById("playlists");
+        playlists.forEach((playlist) => {
+          const playlistElement = document.createElement("section");
+          playlistElement.classList.add("playlist");
+      
+          const title = document.createElement("h2");
+          title.textContent = `${playlist.guardianName}'s Playlist`;
+          playlistElement.appendChild(title);
+      
+          songs.forEach(song => {
+      
+              const songElement =  document.createElement('div');
+              songElement.classList.add('song');
+      
+              const songTitle = document.createElement('span');
+              songTitle.classList.add('song-title');
+              songTitle.textContent = song.title;
+              songElement.appendChild(songTitle);
+      
+              const songArtist = document.createElement('span');
+              songArtist.textContent = ` by ${song.artist}`;
+              songElement.appendChild(songArtist);
+      
+              playlistElement.appendChild(songElement);
+          });
+         
+          playlistsContainer.appendChild(playlistElement);
+        });
+      }; 
+      
+      // Generate playlists and display them
+      const generatedPlaylists = generatePlaylist(guardians, songs);
+      displayPlaylists(generatedPlaylists);

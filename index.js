@@ -14,8 +14,8 @@ const songs = [
     { title: "Love on the brain", artist: "Rihanna", genre: "Pop" },
     { title: "Tshwala Bami", artist: "Chillies RSA", genre: "Amapiano" },
     { title: "Ghida", artist: "Dj Karri & Dj Gizo", genre:"Amapiano" },
-    {}
-    {}
+    { title: "First Time", artist: "Teeks", genre:"R&B/Soul", },
+    { title: "", artist:"", genre:"",},
     
     // Feel free to add even more songs
 ];
@@ -25,14 +25,22 @@ const songs = [
 const guardians = {
     "Star-Lord": "Rock",
     "Gamora": "Pop",
-    // Add preferences for Drax, Rocket, and Groot
+    "Drax" : "Amapiano",
+    "Rocket" : "R&B",
+    "Groot" : "Pop",
+     // Add preferences for Drax, Rocket, and Groot
 };
 
 // Function to generate playlist based on preferred genre
-function generatePlaylist(guardians, songs) {
-    // Use the map() function to create playlists for each Guardian
+ // Use the map() function to create playlists for each Guardian
     // Your code here
-}
+    function generatePlaylist(guardians, songs) {
+        const playlists = Object.entries(guardians).map(([guardianName, genre]) => {
+          const guardianPlaylist = songs.filter((song) => song.genre === genre);
+          return { guardianName, songs: guardianPlaylist };
+        });
+        return playlists;
+      }
 
 // Call generatePlaylist and display the playlists for each Guardian
 generatePlaylist(guardians, songs);
